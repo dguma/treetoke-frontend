@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
 import './App.css';
+import StrainList from './components/StrainList';
 
 function App() {
+  const uri = 'https://treetoke-api.herokuapp.com/strains/';
+  const [strains, setStrains] = useState([]);
+
+  useEffect(() => {
+    fetch(uri)
+    .then(res => res.json())
+    .then(data => setStrains(data))
+  }, [uri])
+
+  console.log(strains)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <StrainList strainList={strains} />
     </div>
   );
 }
