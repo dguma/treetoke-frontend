@@ -1,0 +1,33 @@
+.cardContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;  
+    width: 100vw;
+}
+
+.mainInfo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.moreInfo li {
+    flex-direction: column;
+}
+
+.moreInfo h3 {
+    text-align: center;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
