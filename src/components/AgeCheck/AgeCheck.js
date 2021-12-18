@@ -114,9 +114,9 @@ const StyledWrapper = styled.div`
 
 function AgeCheck(props) {
 
-    const[month, setMonth] = useState(0);
-    const[day, setDay] = useState(0);
-    const[year, setYear] = useState(0);
+    const[month, setMonth] = useState('');
+    const[day, setDay] = useState('');
+    const[year, setYear] = useState('');
 
     return (
         <StyledWrapper>
@@ -133,18 +133,60 @@ function AgeCheck(props) {
                 <div className='dob'>
                     <div>
                         <label>Month</label>
-                        <input type='number' placeholder='Month' maxLength='12' onChange={event => setMonth(event.target.value)}></input>
-                        {(month > 12 || month < 0) ? <p className='message' >Please enter a valid calender month number</p> : null}  
+                        <input type='number' placeholder='Month' maxLength='12' onChange={event => {
+                                const message = document.createElement('p');
+                                message.setAttribute('class', 'message');
+                                message.innerHTML = "Please enter a valid calender month number";
+                                setMonth(event.target.value);
+                                if(event.target.value > 12 || event.target.value < 0){
+                                    event.target.parentElement.append(message);
+                                    console.log(event.target.parentElement.lastChild)
+                                } else if(event.target.value <= 12 || event.target.parentElement.children[2].className === 'message') {
+                                    let messages = document.getElementsByTagName('p');
+                                    for(let i = 0; i < messages.length; i++) {
+                                        messages[i].style.display = 'none';
+                                    }
+                                }
+                            }
+                        }></input>
+                        {}  
                     </div>
                     <div>
                         <label>Day</label>
-                        <input type='number' placeholder='Day' maxLength='31' onChange={event => setDay(event.target.value)}></input>
-                        {(day > 31 || day < 0) ? <p className='message'>Please enter a valid calender day number</p> : null}   
+                        <input type='number' placeholder='Day' maxLength='31' onChange={event => {
+                                const message = document.createElement('p');
+                                message.setAttribute('class', 'message');
+                                message.innerHTML = "Please enter a valid calender month number";
+                                if(event.target.value > 31 || event.target.value < 0){
+                                    event.target.parentElement.append(message);
+                                    console.log(event.target.parentElement.lastChild)
+                                } else if(event.target.value <= 31 || event.target.parentElement.children[2].className === 'message') {
+                                    let messages = document.getElementsByTagName('p');
+                                    for(let i = 0; i < messages.length; i++) {
+                                        messages[i].style.display = 'none';
+                                    }
+                                }
+                            }
+                        }></input>  
                     </div>
                     <div>
                         <label>Year</label>
-                        <input type='number' placeholder='Year' maxLength='3000' onChange={event => setYear(event.target.value)}></input>
-                        {(year > 2000 || year < 0) ? <p className='message'>You must be 21 years of age or older</p> : null}   
+                        <input type='number' placeholder='Year' maxLength='3000' onChange={event => {
+                                const message = document.createElement('p');
+                                message.setAttribute('class', 'message');
+                                message.innerHTML = "Please enter a valid calender month number";
+                                setMonth(event.target.value);
+                                if(event.target.value > 2100 || event.target.value < 0){
+                                    event.target.parentElement.append(message);
+                                    console.log(event.target.parentElement.lastChild)
+                                } else if(event.target.value <= 2100 || event.target.parentElement.children[2].className === 'message') {
+                                    let messages = document.getElementsByTagName('p');
+                                    for(let i = 0; i < messages.length; i++) {
+                                        messages[i].style.display = 'none';
+                                    }
+                                }
+                            }
+                        }></input>  
                     </div>  
                 </div>
                 
