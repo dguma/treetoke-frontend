@@ -1,6 +1,6 @@
 {
   "name": "treetoke-webapp",
-  "homepage": "http://treetoke.com",
+  "homepage": ".",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
