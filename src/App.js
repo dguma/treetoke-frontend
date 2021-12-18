@@ -1,5 +1,5 @@
 import React, { Fragment, useEffect, useState } from 'react';
-import { Route, Routes, Router } from 'react-router-dom';
+import { Route, Routes} from 'react-router-dom';
 import './App.css';
 import AgeCheck from './components/AgeCheck/AgeCheck';
 import Header from './components/Home/Header/Header';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useState } from 'react/cjs/react.development';
 import styled, { css } from 'styled-components';
-import logo from '../../assets/treetoke_logo.png';
+import logo from './treetoke_logo.png';
 
 const DisplayHor = css`
     display: flex;
