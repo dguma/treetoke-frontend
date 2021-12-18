@@ -58,7 +58,7 @@ function App() {
               <StrainDetails strainName={strainName} strains={strains}/>
             </>
           } />
-          <Route path='/' element={(ageVerif === true) ? <Home/> : <AgeCheck checkAge={checkAge}/>} />
+          <Route path='/' element={<AgeCheck checkAge={checkAge}/>} />
         </Routes>
       </Fragment>
   );
