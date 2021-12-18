@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react/cjs/react.development';
 import styled, { css } from 'styled-components';
 import logo from './treetoke_logo.png';
 
@@ -114,10 +113,6 @@ const StyledWrapper = styled.div`
 
 function AgeCheck(props) {
 
-    const[month, setMonth] = useState('');
-    const[day, setDay] = useState('');
-    const[year, setYear] = useState('');
-
     return (
         <StyledWrapper>
 
@@ -137,7 +132,6 @@ function AgeCheck(props) {
                                 const message = document.createElement('p');
                                 message.setAttribute('class', 'message');
                                 message.innerHTML = "Please enter a valid calender month number";
-                                setMonth(event.target.value);
                                 if(event.target.value > 12 || event.target.value < 0){
                                     event.target.parentElement.append(message);
                                     console.log(event.target.parentElement.lastChild)
@@ -175,7 +169,6 @@ function AgeCheck(props) {
                                 const message = document.createElement('p');
                                 message.setAttribute('class', 'message');
                                 message.innerHTML = "Please enter a valid calender month number";
-                                setMonth(event.target.value);
                                 if(event.target.value > 2100 || event.target.value < 0){
                                     event.target.parentElement.append(message);
                                     console.log(event.target.parentElement.lastChild)
