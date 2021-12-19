@@ -5,12 +5,13 @@ import nugg from '../../assets/images/nugg.png';
 import {Link} from 'react-router-dom';
 
 const HomeWrapper = styled.div`
-    width: 100vw;
+    width: 100%;
     height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
+    align-items: space-around;
+    margin: 0;
 `;
 
 const HeroWrapper = styled.div`
@@ -25,7 +26,7 @@ const HeroWrapper = styled.div`
     background: radial-gradient(circle, #f1efef 10%, #b4b4b4 70%, #6C7A89 100%);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding-bottom: 1em;
     
@@ -35,10 +36,12 @@ const HeroWrapper = styled.div`
         justify-content: space-around;
         align-items: center;
         height: 60%;
-        width: 70%;
+        /* width: 70%; */
         padding-top: 6em;
-        padding-right: 4em;
-
+        /* padding-right: 4em; */
+        @media (max-width: 600px) {
+            flex-direction: column;
+        }
         .nugg {
             width: 17em;
             height: 17em;
@@ -48,10 +51,17 @@ const HeroWrapper = styled.div`
     }
 
     .info {
-        max-height: 100%;
+        max-width: 100%;
         min-width: 16em;
         width: 100%;
         text-align: center;
+        padding-right: 2em;
+
+        @media (max-width: 600px) {
+            margin-top: -2em;
+            margin-bottom: 2em;
+            padding: 0;
+        }
 
         h2 {
             color: #3C2109;
@@ -61,7 +71,8 @@ const HeroWrapper = styled.div`
         }
         p {
             color: #34515E;
-            /* width: 70%; */
+            width: 70%;
+            margin: 0 auto;
         }
     }
 

@@ -7,6 +7,7 @@ const StyledHeader = styled.header`
     padding: 2em 3em;
     box-shadow: 0 0 1em -.12em #0d322c;
     width: 80%;
+    margin: 0 auto;
 
 `;
 
