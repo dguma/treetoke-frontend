@@ -1,13 +1,18 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import logo from '../../../AgeCheck/treetoke_logo.png';
 
 const StyledNav = styled.nav`
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
 
     ul {
        display: flex;
-       justify-content: flex-end;
+       justify-content: center;
        align-items: center;
 
        li {
@@ -17,14 +22,18 @@ const StyledNav = styled.nav`
        a {
            text-decoration: none;
            text-transform: uppercase;
-           font-size: 1.2em;
-           font-weight: 500;
-           color: darkgreen;
+           font-size: 1em;
+           font-weight: 300;
+           color: white;
 
            :hover {
                color: lightgreen;
            }
        }
+    }
+
+    img {
+        width: 10em;
     }
     
 `;
@@ -32,6 +41,11 @@ const StyledNav = styled.nav`
 function Nav(props) {
     return (
         <StyledNav>
+            <Link to='/'>
+                <img src={logo} alt='logo' />
+            </Link>
+            
+
             <ul>
                 <li><Link to='/'>Home</Link></li>
                 <li><Link to='/strains'>Strains</Link></li>
